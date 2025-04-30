@@ -1,0 +1,659 @@
+/* === RESET & BASE === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #dd5805;
+  --dark-color: #333;
+  --light-color: #f1f1f1;
+  --background-light: #fafafa;
+  --text-dark: #333;
+  --text-medium: #555;
+  --text-light: #777;
+  --white: #fff;
+}
+
+html, body {
+  font-family: 'Helvetica Neue', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === NAVBAR === */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--white);
+  z-index: 10;
+}
+
+.nav h1 {
+  font-size: 24px;
+}
+
+.nav nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav nav a {
+  margin-left: 30px;
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+.nav nav a:hover {
+  color: var(--primary-color);
+}
+
+.social-nav {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.social-nav a {
+  margin-left: 15px;
+  font-size: 20px;
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+.social-nav a:hover {
+  color: var(--primary-color);
+}
+
+/* === HERO === */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: var(--white);
+  z-index: 2;
+}
+
+.hero-text h2 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.hero-text span {
+  color: var(--primary-color);
+}
+
+/* === BOTÕES === */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--text-dark);
+  border: 2px solid var(--text-dark);
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--dark-color);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+/* === SOBRE MIM === */
+.about-me {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 50px;
+  background: #f9f9f9;
+}
+
+.about-me-content {
+  flex: 1 1 400px;
+  padding-right: 50px;
+}
+
+.about-me-content h3 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.about-me-content p {
+  line-height: 1.6;
+  color: var(--text-medium);
+}
+
+.about-me-image {
+  flex: 1 1 400px;
+}
+
+.about-me-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* === FRASE === */
+.quote {
+  background: var(--light-color);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.quote h3 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.quote blockquote {
+  font-style: italic;
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #666;
+}
+
+/* === PROJETOS === */
+.projects {
+  padding: 100px 50px;
+  background: var(--white);
+}
+
+.projects h3 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5em;
+  color: var(--text-dark);
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.project {
+  background: var(--background-light);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+}
+
+.project img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project h4 {
+  font-size: 1.5em;
+  color: var(--text-dark);
+  margin: 10px 0;
+}
+
+/* === CONTATO === */
+.contact {
+  padding: 100px 50px;
+  background: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact h3 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: var(--text-dark);
+}
+
+.contact form {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contact button {
+  padding: 15px;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--white);
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact button:hover {
+  transform: scale(1.05);
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  background: var(--dark-color);
+  color: var(--white);
+  padding: 20px;
+}
+
+/* === SCROLL ANIMATION === */
+.about-me, .quote, .projects, .contact, .experiences, .skills {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
+
+.about-me.show, .quote.show, .projects.show, .contact.show, .experiences.show, .skills.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === EXPERIÊNCIAS === */
+.experiences {
+  padding: 100px 50px;
+  background: var(--light-color);
+  text-align: center;
+}
+
+.experiences h3 {
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  color: var(--text-dark);
+}
+
+.experience-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.experience-container {
+  background: #444;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.experience-container:hover {
+  transform: translateY(-5px);
+}
+
+.experience-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.experience-header .period {
+  display: block;
+  font-size: 0.9em;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.experience-header img {
+  max-width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.experience-header .role {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--white);
+}
+
+.experience-details {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: var(--white);
+  padding: 20px;
+  opacity: 0;
+  transition: top 0.3s ease, opacity 0.3s ease;
+  text-align: left;
+}
+
+.experience-container:hover .experience-details {
+  top: 0;
+  opacity: 1;
+}
+
+.experience-details p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
+.experience-details strong {
+  color: var(--primary-color);
+}
+
+/* === SKILLS === */
+.skills {
+  padding: 100px 50px;
+  background: var(--white);
+  text-align: center;
+}
+
+.skills h3 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.skills-instruction {
+  font-style: italic;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background-color: #f9f9f9;
+  color: var(--text-dark);
+  border-radius: 10px;
+  height: 180px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.8s ease-in-out;
+}
+
+.card-front {
+  background-color: #f9f9f9;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: rotateY(180deg);
+}
+
+.skill-card:hover .card-front {
+  transform: rotateY(-180deg);
+}
+
+.skill-card:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+.skill-card i {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.skill-card h3 {
+  font-size: 1.2em;
+  margin-top: 0;
+}
+
+.card-back p {
+  padding: 15px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* === QUALIFICAÇÕES === */
+.qualificacoes {
+  padding: 80px 30px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.qualificacoes h2 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.qualificacoes .subtitulo {
+  color: var(--text-light);
+  margin-bottom: 40px;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.linha-vertical {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #ccc;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.coluna-titulos {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.coluna-titulos h3 {
+  font-size: 1.5em;
+  color: var(--text-light);
+}
+
+.coluna {
+  width: 45%;
+  padding: 15px;
+  margin-bottom: 30px;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 1;
+}
+
+.coluna.formacoes {
+  text-align: right;
+  align-self: flex-start;
+}
+
+.coluna.trabalhos {
+  text-align: left;
+  align-self: flex-end;
+}
+
+.coluna h4 {
+  color: var(--text-dark);
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.coluna .instituicao {
+  color: var(--text-light);
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.coluna .periodo {
+  color: #999;
+  font-style: italic;
+  font-size: 0.85em;
+}
+
+.coluna::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.coluna.formacoes::before {
+  right: -26px;
+}
+
+.coluna.trabalhos::before {
+  left: -26px;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .about-me {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .about-me-content {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .hero-text {
+    left: 5%;
+    text-align: center;
+  }
+
+  .nav {
+    padding: 20px;
+  }
+
+  .experiences,
+  .skills {
+    padding: 50px 20px;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  .coluna {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .coluna::before {
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .linha-vertical {
+    left: 50%;
+  }
+
+  .coluna-titulos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .coluna-titulos h3 {
+    margin-bottom: 10px;
+  }
+}
