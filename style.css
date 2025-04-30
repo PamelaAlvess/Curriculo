@@ -46,7 +46,7 @@ a {
   font-size: 24px;
 }
 
-/* .nav nav {
+.nav nav {
   display: flex;
   align-items: center;
 }
@@ -71,30 +71,9 @@ a {
   margin-left: 15px;
   font-size: 20px;
   color: var(--white);
-  transition: color 0.3s ease; */
+  transition: color 0.3s ease; 
+}
 
-  .nav nav {
-    flex-direction: column; /* Empilha os links verticalmente */
-    align-items: flex-start; /* Alinha os links à esquerda */
-    margin-top: 10px; /* Adiciona um pouco de espaço abaixo do título */
-  }
-
-  .nav nav a {
-    margin-left: 0; /* Remove a margem esquerda dos links */
-    margin-bottom: 10px; /* Adiciona espaço entre os links */
-    display: block; /* Faz com que cada link ocupe uma linha inteira */
-  }
-
-  .social-nav {
-    margin-left: 0; /* Remove a margem esquerda dos ícones sociais */
-    margin-top: 10px; /* Adiciona espaço acima dos ícones sociais */
-  }
-
-  .social-nav a {
-    margin-left: 10px; /* Reduz a margem entre os ícones sociais */
-  }
-
-  
 .social-nav a:hover {
   color: var(--primary-color);
 }
